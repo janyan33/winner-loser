@@ -143,8 +143,8 @@ ggplot(data = all_data, aes(x = year, y = yi)) + geom_point() + geom_smooth(meth
 ggplot(data = all_data, aes(x = yi, y = contest_outcome, color = contest_outcome)) + 
   geom_jitter(height = 0.25, width = 0, alpha = 0.4, size = all_data$sample_size/6) + 
   My_Theme + ylab("") + xlab("Odds of repeating prior outcome") + theme(legend.position = "none") + 
-  scale_x_continuous(limits = c(-3, 4), breaks = c(-2.303, 0, 2.303), 
-                     label = c("0.1", "1", "10")) + 
+  scale_x_continuous(limits = c(-3, 5), breaks = c( -2.303, -0.693, 0, 0.693, 2.303, 4.605), 
+                     label = c("0.1", "0.5", "1", "2", "10", "100")) + 
   geom_vline(xintercept = 0, linetype = 2) + scale_color_manual(values = c("#0077b6", "#d00000")) +
   geom_pointrange(data = win_loss_95_CI, aes(x = emmean, xmin = asymp.LCL, xmax = asymp.UCL), color = "grey20", 
                   lwd = 2.5, fatten = 2, shape = 23)
